@@ -12,43 +12,43 @@ To test the project run command `./gradlew test`
 
 ### Time Complexity
 
-| Operation / Method                  |     Custom      |       JDK       | Winner  |
-|:------------------------------------|:---------------:|:---------------:|:-------:|
-| **CustomTreeSet()**                 |     $O(1)$      |     $O(1)$      |   Tie   |
-| **CustomTreeSet(Comparator)**       |     $O(1)$      |     $O(1)$      |   Tie   |
-| **CustomTreeSet(Collection)**       |  $O(m \log n)$  |  $O(m \log n)$  |   Tie   |
-| **CustomTreeSet(SortedSet)**        |  $O(m \log n)$  |     $O(m)$      | **JDK** |
-| **add(E)**                          |   $O(\log n)$   |   $O(\log n)$   |   Tie   |
-| **addAll(Collection)**              |  $O(m \log n)$  |  $O(m \log n)$  |   Tie   |
-| **ceiling(E)**                      |   $O(\log n)$   |   $O(\log n)$   |   Tie   |
-| **clear()**                         |     $O(1)$      |     $O(1)$      |   Tie   |
-| **comparator()**                    |     $O(1)$      |     $O(1)$      |   Tie   |
-| **contains(Object)**                |   $O(\log n)$   |   $O(\log n)$   |   Tie   |
-| **descendingIterator()**            |     $O(n)$      |     $O(n)$      |   Tie   |
-| **descendingSet()**                 |     $O(1)$      |     $O(1)$      |   Tie   |
-| **descendingSet().iterator()**      |     $O(n)$      |     $O(n)$      |   Tie   |
-| **first()**                         |   $O(\log n)$   |   $O(\log n)$   |   Tie   |
-| **floor(E)**                        |   $O(\log n)$   |   $O(\log n)$   |   Tie   |
-| **headSet(E)**                      |     $O(1)$      |     $O(1)$      |   Tie   |
-| **headSet(E, boolean)**             |     $O(1)$      |     $O(1)$      |   Tie   |
-| **headSet().iterator()**            |     $O(k)$      |     $O(k)$      |   Tie   |
-| **higher(E)**                       |   $O(\log n)$   |   $O(\log n)$   |   Tie   |
-| **isEmpty()**                       |     $O(1)$      |     $O(1)$      |   Tie   |
-| **iterator()**                      |     $O(n)$      |     $O(n)$      |   Tie   |
-| **last()**                          |   $O(\log n)$   |   $O(\log n)$   |   Tie   |
-| **lower(E)**                        |   $O(\log n)$   |   $O(\log n)$   |   Tie   |
-| **pollFirst()**                     |   $O(\log n)$   |   $O(\log n)$   |   Tie   |
-| **pollLast()**                      |   $O(\log n)$   |   $O(\log n)$   |   Tie   |
-| **remove(Object)**                  |   $O(\log n)$   |   $O(\log n)$   |   Tie   |
-| **size()**                          |     $O(1)$      |     $O(1)$      |   Tie   |
-| **subSet(E, E)**                    |     $O(1)$      |     $O(1)$      |   Tie   |
-| **subSet(E, boolean, E, boolean)**  |     $O(1)$      |     $O(1)$      |   Tie   |
-| **subSet().iterator()**             |     $O(k)$      |     $O(k)$      |   Tie   |
-| **tailSet(E)**                      |     $O(1)$      |     $O(1)$      |   Tie   |
-| **tailSet(E, boolean)**             |     $O(1)$      |     $O(1)$      |   Tie   |
-| **tailSet().iterator()**            |     $O(k)$      |     $O(k)$      |   Tie   |
-| **toArray()**                       |     $O(n)$      |     $O(n)$      |   Tie   |
-| **toArray(T[])**                    |     $O(n)$      |     $O(n)$      |   Tie   |
+| Operation / Method               |      V2       |      JDK      | Winner  |
+|:---------------------------------|:-------------:|:-------------:|:-------:|
+| `CustomTreeSet()`                |    $O(1)$     |    $O(1)$     |   Tie   |
+| `CustomTreeSet(Comparator)`      |    $O(1)$     |    $O(1)$     |   Tie   |
+| `CustomTreeSet(Collection)`      | $O(m \log n)$ | $O(m \log n)$ |   Tie   |
+| `CustomTreeSet(SortedSet)`       | $O(m \log n)$ |    $O(m)$     | **JDK** |
+| `add(E)`                         |  $O(\log n)$  |  $O(\log n)$  |   Tie   |
+| `addAll(Collection)`             | $O(m \log n)$ | $O(m \log n)$ |   Tie   |
+| `ceiling(E)`                     |  $O(\log n)$  |  $O(\log n)$  |   Tie   |
+| `clear()`                        |    $O(1)$     |    $O(1)$     |   Tie   |
+| `comparator()`                   |    $O(1)$     |    $O(1)$     |   Tie   |
+| `contains(Object)`               |  $O(\log n)$  |  $O(\log n)$  |   Tie   |
+| `descendingIterator()`           |    $O(n)$     |    $O(n)$     |   Tie   |
+| `descendingSet()`                |    $O(1)$     |    $O(1)$     |   Tie   |
+| `descendingSet().iterator()`     |    $O(n)$     |    $O(n)$     |   Tie   |
+| `first()`                        |  $O(\log n)$  |  $O(\log n)$  |   Tie   |
+| `floor(E)`                       |  $O(\log n)$  |  $O(\log n)$  |   Tie   |
+| `headSet(E)`                     |    $O(1)$     |    $O(1)$     |   Tie   |
+| `headSet(E, boolean)`            |    $O(1)$     |    $O(1)$     |   Tie   |
+| `headSet().iterator()`           |    $O(k)$     |    $O(k)$     |   Tie   |
+| `higher(E)`                      |  $O(\log n)$  |  $O(\log n)$  |   Tie   |
+| `isEmpty()`                      |    $O(1)$     |    $O(1)$     |   Tie   |
+| `iterator()`                     |    $O(n)$     |    $O(n)$     |   Tie   |
+| `last()`                         |  $O(\log n)$  |  $O(\log n)$  |   Tie   |
+| `lower(E)`                       |  $O(\log n)$  |  $O(\log n)$  |   Tie   |
+| `pollFirst()`                    |  $O(\log n)$  |  $O(\log n)$  |   Tie   |
+| `pollLast()`                     |  $O(\log n)$  |  $O(\log n)$  |   Tie   |
+| `remove(Object)`                 |  $O(\log n)$  |  $O(\log n)$  |   Tie   |
+| `size()`                         |    $O(1)$     |    $O(1)$     |   Tie   |
+| `subSet(E, E)`                   |    $O(1)$     |    $O(1)$     |   Tie   |
+| `subSet(E, boolean, E, boolean)` |    $O(1)$     |    $O(1)$     |   Tie   |
+| `subSet().iterator()`            |    $O(k)$     |    $O(k)$     |   Tie   |
+| `tailSet(E)`                     |    $O(1)$     |    $O(1)$     |   Tie   |
+| `tailSet(E, boolean)`            |    $O(1)$     |    $O(1)$     |   Tie   |
+| `tailSet().iterator()`           |    $O(k)$     |    $O(k)$     |   Tie   |
+| `toArray()`                      |    $O(n)$     |    $O(n)$     |   Tie   |
+| `toArray(T[])`                   |    $O(n)$     |    $O(n)$     |   Tie   |
 
 **Notes**:
 - **m**: Number of elements in collection to be added to set.
@@ -56,43 +56,43 @@ To test the project run command `./gradlew test`
 - **n**: Total number of elements in the set.
 ### Space Complexity
 
-| Operation / Method                  |     Custom      |       JDK       | Winner  |
-|:------------------------------------|:---------------:|:---------------:|:-------:|
-| **CustomTreeSet()**                 |     $O(1)$      |     $O(1)$      |   Tie   |
-| **CustomTreeSet(Comparator)**       |     $O(1)$      |     $O(1)$      |   Tie   |
-| **CustomTreeSet(Collection)**       |     $O(m)$      |     $O(m)$      |   Tie   |
-| **CustomTreeSet(SortedSet)**        |     $O(m)$      |     $O(m)$      |   Tie   |
-| **add(E)**                          |     $O(1)$      |     $O(1)$      |   Tie   |
-| **addAll(Collection)**              |     $O(m)$      |     $O(m)$      |   Tie   |
-| **ceiling(E)**                      |     $O(1)$      |     $O(1)$      |   Tie   |
-| **clear()**                         |     $O(1)$      |     $O(1)$      |   Tie   |
-| **comparator()**                    |     $O(1)$      |     $O(1)$      |   Tie   |
-| **contains(Object)**                |     $O(1)$      |     $O(1)$      |   Tie   |
-| **descendingIterator()**            |     $O(1)$      |     $O(1)$      |   Tie   |
-| **descendingSet()**                 |     $O(1)$      |     $O(1)$      |   Tie   |
-| **descendingSet().iterator()**      |     $O(1)$      |     $O(1)$      |   Tie   |
-| **first()**                         |     $O(1)$      |     $O(1)$      |   Tie   |
-| **floor(E)**                        |     $O(1)$      |     $O(1)$      |   Tie   |
-| **headSet(E)**                      |     $O(1)$      |     $O(1)$      |   Tie   |
-| **headSet(E, boolean)**             |     $O(1)$      |     $O(1)$      |   Tie   |
-| **headSet().iterator()**            |     $O(1)$      |     $O(1)$      |   Tie   |
-| **higher(E)**                       |     $O(1)$      |     $O(1)$      |   Tie   |
-| **isEmpty()**                       |     $O(1)$      |     $O(1)$      |   Tie   |
-| **iterator()**                      |     $O(1)$      |     $O(1)$      |   Tie   |
-| **last()**                          |     $O(1)$      |     $O(1)$      |   Tie   |
-| **lower(E)**                        |     $O(1)$      |     $O(1)$      |   Tie   |
-| **pollFirst()**                     |     $O(1)$      |     $O(1)$      |   Tie   |
-| **pollLast()**                      |     $O(1)$      |     $O(1)$      |   Tie   |
-| **remove(Object)**                  |     $O(1)$      |     $O(1)$      |   Tie   |
-| **size()**                          |     $O(1)$      |     $O(1)$      |   Tie   |
-| **subSet(E, E)**                    |     $O(1)$      |     $O(1)$      |   Tie   |
-| **subSet(E, boolean, E, boolean)**  |     $O(1)$      |     $O(1)$      |   Tie   |
-| **subSet().iterator()**             |     $O(1)$      |     $O(1)$      |   Tie   |
-| **tailSet(E)**                      |     $O(1)$      |     $O(1)$      |   Tie   |
-| **tailSet(E, boolean)**             |     $O(1)$      |     $O(1)$      |   Tie   |
-| **tailSet().iterator()**            |     $O(1)$      |     $O(1)$      |   Tie   |
-| **toArray()**                       |     $O(n)$      |     $O(n)$      |   Tie   |
-| **toArray(T[])**                    |     $O(n)$      |     $O(n)$      |   Tie   |
+| Operation / Method               |   V2   |  JDK   | Winner |
+|:---------------------------------|:------:|:------:|:------:|
+| `CustomTreeSet()`                | $O(1)$ | $O(1)$ |  Tie   |
+| `CustomTreeSet(Comparator)`      | $O(1)$ | $O(1)$ |  Tie   |
+| `CustomTreeSet(Collection)`      | $O(m)$ | $O(m)$ |  Tie   |
+| `CustomTreeSet(SortedSet)`       | $O(m)$ | $O(m)$ |  Tie   |
+| `add(E)`                         | $O(1)$ | $O(1)$ |  Tie   |
+| `addAll(Collection)`             | $O(m)$ | $O(m)$ |  Tie   |
+| `ceiling(E)`                     | $O(1)$ | $O(1)$ |  Tie   |
+| `clear()`                        | $O(1)$ | $O(1)$ |  Tie   |
+| `comparator()`                   | $O(1)$ | $O(1)$ |  Tie   |
+| `contains(Object)`               | $O(1)$ | $O(1)$ |  Tie   |
+| `descendingIterator()`           | $O(1)$ | $O(1)$ |  Tie   |
+| `descendingSet()`                | $O(1)$ | $O(1)$ |  Tie   |
+| `descendingSet().iterator()`     | $O(1)$ | $O(1)$ |  Tie   |
+| `first()`                        | $O(1)$ | $O(1)$ |  Tie   |
+| `floor(E)`                       | $O(1)$ | $O(1)$ |  Tie   |
+| `headSet(E)`                     | $O(1)$ | $O(1)$ |  Tie   |
+| `headSet(E, boolean)`            | $O(1)$ | $O(1)$ |  Tie   |
+| `headSet().iterator()`           | $O(1)$ | $O(1)$ |  Tie   |
+| `higher(E)`                      | $O(1)$ | $O(1)$ |  Tie   |
+| `isEmpty()`                      | $O(1)$ | $O(1)$ |  Tie   |
+| `iterator()`                     | $O(1)$ | $O(1)$ |  Tie   |
+| `last()`                         | $O(1)$ | $O(1)$ |  Tie   |
+| `lower(E)`                       | $O(1)$ | $O(1)$ |  Tie   |
+| `pollFirst()`                    | $O(1)$ | $O(1)$ |  Tie   |
+| `pollLast()`                     | $O(1)$ | $O(1)$ |  Tie   |
+| `remove(Object)`                 | $O(1)$ | $O(1)$ |  Tie   |
+| `size()`                         | $O(1)$ | $O(1)$ |  Tie   |
+| `subSet(E, E)`                   | $O(1)$ | $O(1)$ |  Tie   |
+| `subSet(E, boolean, E, boolean)` | $O(1)$ | $O(1)$ |  Tie   |
+| `subSet().iterator()`            | $O(1)$ | $O(1)$ |  Tie   |
+| `tailSet(E)`                     | $O(1)$ | $O(1)$ |  Tie   |
+| `tailSet(E, boolean)`            | $O(1)$ | $O(1)$ |  Tie   |
+| `tailSet().iterator()`           | $O(1)$ | $O(1)$ |  Tie   |
+| `toArray()`                      | $O(n)$ | $O(n)$ |  Tie   |
+| `toArray(T[])`                   | $O(n)$ | $O(n)$ |  Tie   |
 
 **Notes**:
 - **m**: Number of elements in collection to be added to set.
@@ -185,7 +185,7 @@ Margins under 1.10× are treated as noise-level ties (source data has no per-run
 **Geometric mean (ns/op) across all tested collection sizes (10,000–100,000 elements).**  
 Margins under 1.10× are treated as noise-level ties (source data has no per-run error/variance for true statistical significance testing).
 
-| Method                           | Custom (ns) | JDK (ns)    | Margin |            Winner            |
+| Method                           | V1 (ns)     | JDK (ns)    | Margin |            Winner            |
 |:---------------------------------|:------------|:------------|:------:|:----------------------------:|
 | `add(E)`                         | 126.12      | 128.87      | 1.02×  | **Statistically Equivalent** |
 | `addAll(Collection)`             | 7,456,812.3 | 7,812,345.6 | 1.05×  | **Statistically Equivalent** |
@@ -219,7 +219,7 @@ Margins under 1.10× are treated as noise-level ties (source data has no per-run
 | `subSet().iterator()`            | 1,512,345.6 | 1,567,890.1 | 1.04×  | **Statistically Equivalent** |
 | `tailSet(E)`                     | 1.51        | 1.61        | 1.07×  | **Statistically Equivalent** |
 | `tailSet(E, boolean)`            | 1.48        | 1.58        | 1.07×  | **Statistically Equivalent** |
-| `tailSet().iterator()`           | 1,456,789.0 | 1,612,345.6 | 1.11×  |          **Custom**          |
+| `tailSet().iterator()`           | 1,456,789.0 | 1,612,345.6 | 1.11×  |         **CustomV1**         |
 
 # Performance Charts
 
