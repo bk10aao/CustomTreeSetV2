@@ -87,7 +87,7 @@ public class CustomTreeSet<E extends Comparable<? super E>> extends AbstractSet<
      * @param comparator the comparator used to order elements, or {@code null}
      *                   to use the natural ordering of the elements
      */
-    public CustomTreeSet(Comparator<? super E> comparator) {
+    public CustomTreeSet(final Comparator<? super E> comparator) {
         this.comparator = comparator;
         set = new TreeMap<>(comparator);
     }
@@ -101,7 +101,7 @@ public class CustomTreeSet<E extends Comparable<? super E>> extends AbstractSet<
      *                               element in {@code c} is {@code null}
      * @throws ClassCastException   if the elements in {@code c} are not mutually comparable
      */
-    public CustomTreeSet(Collection<? extends E> c) {
+    public CustomTreeSet(final Collection<? extends E> c) {
         this.comparator = null;
         set = new TreeMap<>();
         addAll(c);
@@ -114,7 +114,7 @@ public class CustomTreeSet<E extends Comparable<? super E>> extends AbstractSet<
      * @param s the sorted set whose elements and comparator are to be used
      * @throws NullPointerException if {@code s} is {@code null}
      */
-    public CustomTreeSet(SortedSet<E> s) {
+    public CustomTreeSet(final SortedSet<E> s) {
         this.comparator = s.comparator();
         set = new TreeMap<>(this.comparator);
         addAll(s);
@@ -127,7 +127,7 @@ public class CustomTreeSet<E extends Comparable<? super E>> extends AbstractSet<
      *
      * @param set the backing map view to wrap; its keys become this set's elements
      */
-    private CustomTreeSet(NavigableMap<E, Object> set) {
+    private CustomTreeSet(final NavigableMap<E, Object> set) {
         this.comparator = set.comparator();
         this.set = set;
     }
@@ -139,7 +139,7 @@ public class CustomTreeSet<E extends Comparable<? super E>> extends AbstractSet<
      * @return {@code true} if this set did not already contain the specified element
      * @throws ClassCastException if {@code item} cannot be compared with the elements already in this set
      */
-    public boolean add(E item) {
+    public boolean add(final E item) {
         return set.put(item, PRESENT) == null;
     }
 
@@ -151,7 +151,7 @@ public class CustomTreeSet<E extends Comparable<? super E>> extends AbstractSet<
      * @return the least element greater than or equal to {@code item},
      *         or {@code null} if no such element exists
      */
-    public E ceiling(E item) {
+    public E ceiling(final E item) {
         Map.Entry<E, Object> entry = set.ceilingEntry(item);
         return entry == null ? null : entry.getKey();
     }
@@ -184,7 +184,7 @@ public class CustomTreeSet<E extends Comparable<? super E>> extends AbstractSet<
      * @throws ClassCastException   if {@code o} cannot be compared with the elements in this set
      * @throws NullPointerException if {@code o} is {@code null} and this set uses natural ordering
      */
-    public boolean contains(Object o) {
+    public boolean contains(final Object o) {
         return set.containsKey(o);
     }
 
@@ -238,7 +238,7 @@ public class CustomTreeSet<E extends Comparable<? super E>> extends AbstractSet<
      * @return the greatest element less than or equal to {@code item},
      *         or {@code null} if no such element exists
      */
-    public E floor(E item) {
+    public E floor(final E item) {
         Map.Entry<E, Object> entry = set.floorEntry(item);
         return entry == null ? null : entry.getKey();
     }
@@ -251,7 +251,7 @@ public class CustomTreeSet<E extends Comparable<? super E>> extends AbstractSet<
      * @return a view of the portion of this set whose elements are strictly
      *         less than {@code toElement}
      */
-    public SortedSet<E> headSet(E toElement) {
+    public SortedSet<E> headSet(final E toElement) {
         return headSet(toElement, false);
     }
 
@@ -266,7 +266,7 @@ public class CustomTreeSet<E extends Comparable<? super E>> extends AbstractSet<
      * @return a view of the portion of this set whose elements are less
      *         than (or equal to) {@code toElement}
      */
-    public NavigableSet<E> headSet(E toElement, boolean inclusive) {
+    public NavigableSet<E> headSet(final E toElement, final boolean inclusive) {
         return new CustomTreeSet<>(set.headMap(toElement, inclusive));
     }
 
@@ -278,7 +278,7 @@ public class CustomTreeSet<E extends Comparable<? super E>> extends AbstractSet<
      * @return the least element strictly greater than {@code item},
      *         or {@code null} if no such element exists
      */
-    public E higher(E item) {
+    public E higher(final E item) {
         Map.Entry<E, Object> entry = set.higherEntry(item);
         return entry == null ? null : entry.getKey();
     }
@@ -323,7 +323,7 @@ public class CustomTreeSet<E extends Comparable<? super E>> extends AbstractSet<
      * @return the greatest element strictly less than {@code item},
      *         or {@code null} if no such element exists
      */
-    public E lower(E item) {
+    public E lower(final E item) {
         Map.Entry<E, Object> entry = set.lowerEntry(item);
         return entry == null ? null : entry.getKey();
     }
@@ -358,7 +358,7 @@ public class CustomTreeSet<E extends Comparable<? super E>> extends AbstractSet<
      * @throws ClassCastException   if {@code o} cannot be compared with the elements in this set
      * @throws NullPointerException if {@code o} is {@code null} and this set uses natural ordering
      */
-    public boolean remove(Object o) {
+    public boolean remove(final Object o) {
         return set.remove(o) != null;
     }
 
@@ -379,7 +379,7 @@ public class CustomTreeSet<E extends Comparable<? super E>> extends AbstractSet<
      * @param toElement   the exclusive upper bound of the returned set
      * @return a view of the specified range of this set
      */
-    public SortedSet<E> subSet(E fromElement, E toElement) {
+    public SortedSet<E> subSet(final E fromElement, final E toElement) {
         return subSet(fromElement, true, toElement, false);
     }
 
@@ -397,7 +397,7 @@ public class CustomTreeSet<E extends Comparable<? super E>> extends AbstractSet<
      * @return a view of the specified range of this set
      * @throws IllegalArgumentException if {@code fromElement} is greater than {@code toElement}
      */
-    public NavigableSet<E> subSet(E fromElement, boolean fromInclusive, E toElement, boolean toInclusive) {
+    public NavigableSet<E> subSet(final E fromElement, final boolean fromInclusive, final E toElement, final boolean toInclusive) {
         return new CustomTreeSet<>(set.subMap(fromElement, fromInclusive, toElement, toInclusive));
     }
 
@@ -409,7 +409,7 @@ public class CustomTreeSet<E extends Comparable<? super E>> extends AbstractSet<
      * @return a view of the portion of this set whose elements are greater
      *         than or equal to {@code fromElement}
      */
-    public SortedSet<E> tailSet(E fromElement) {
+    public SortedSet<E> tailSet(final E fromElement) {
         return tailSet(fromElement, true);
     }
 
@@ -424,22 +424,22 @@ public class CustomTreeSet<E extends Comparable<? super E>> extends AbstractSet<
      * @return a view of the portion of this set whose elements are greater
      *         than (or equal to) {@code fromElement}
      */
-    public NavigableSet<E> tailSet(E fromElement, boolean inclusive) {
+    public NavigableSet<E> tailSet(final E fromElement, final boolean inclusive) {
         return new CustomTreeSet<>(set.tailMap(fromElement, inclusive));
     }
 
     /**
-     * Returns an array containing all of the elements in this set, in
+     * Returns an array containing all the elements in this set, in
      * ascending order.
      *
-     * @return an array containing all of the elements in this set
+     * @return an array containing all the elements in this set
      */
     public Object[] toArray() {
         return set.keySet().toArray();
     }
 
     /**
-     * Returns an array containing all of the elements in this set, in
+     * Returns an array containing all the elements in this set, in
      * ascending order; the runtime type of the returned array is that of
      * the specified array.
      *
@@ -447,12 +447,12 @@ public class CustomTreeSet<E extends Comparable<? super E>> extends AbstractSet<
      *            stored, if it is big enough; otherwise, a new array of the
      *            same runtime type is allocated for this purpose
      * @param <T> the runtime type of the array to contain the collection
-     * @return an array containing all of the elements in this set
+     * @return an array containing all the elements in this set
      * @throws ArrayStoreException  if the runtime type of {@code a} is not a
      *                               supertype of the runtime type of every element in this set
      * @throws NullPointerException if {@code a} is {@code null}
      */
-    public <T> T[] toArray(T[] a) {
+    public <T> T[] toArray(final T[] a) {
         return set.keySet().toArray(a);
     }
 }
